@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Todo Application</title>
+</head>
+
+<body>
+
+	<ul>
+	{% for todo in todos %}
+		<li>{{ todo.name }} {{ todo.is_completed }} {{ todo.added_date }}</li>
+	{%  endfor %}	
+
+	</ul>
+
+	<hr>
+	<form method="post">
+		{% csrf_token %}
+		{{ form }}
+		<button type="submit">ADD!</button>
+	</form>
+</body>
+</html>
